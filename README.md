@@ -7,6 +7,7 @@ Generating 10ʹ Block Record Count Aggregates for each Species and Year for BBL 
 Since we didn’t have the BBL dataset handy, we used a PostgreSQL database 
 
 * First determine the bounding box for the grid area.
+
 `select st_extent(geom) from adm0;`
 
 This returns:
@@ -81,6 +82,7 @@ Aggregate layer added.
 
 ![alt text](https://github.com/mryassain/USGS-BISON-biomapr/blob/master/images/04_aggregate_without_grid.png)
 Aggregate layer with grid layer removed.
+
 
 ### Retrieving the data fast
 ***
