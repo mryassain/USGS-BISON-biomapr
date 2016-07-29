@@ -37,6 +37,38 @@ $BODY$
 ALTER FUNCTION public.st_createfishnet(integer, integer, double precision, double precision, double precision, double precision)
   OWNER TO postgres;
 ```
+So set lon1=73, lat1=15, lon2=135, lat2=54 and then nrows = (54-15)*6 = 234; ncols = (135-73)*6 = 372 with each grid cell 1/6° = 0.16666666666667
+
+```sql
+create table grid10 as
+select *
+from st_createfishnet(234, 372, 0.16666666666667, 0.16666666666667, 73, 15);
+```
+Need to remember to set the SRID…
+```sql
+select UpdateGeometrySRID('grid10', 'geom', 4326);
+```
+…and create a spatial index.
+
+```sql
+create index c10gidx on grid10 using gist(geom);
+```
+Now the grid10 layer has three columns: row, col, geom.
+
+3. Create a new layer with the count aggregates, grouping by species (using serotypes here with BBL data) and year (using observation_dt here):
+
+```sql
+create table bbl10agg as select
+  serotypes,
+  extract(year from date(observation_dt)) as year,
+  count(1) as ncount(1) as n,
+  g.geom
+from
+  bbl_data o join
+  grid10 g on st_intersects(o.geom, g.geom)
+group by row, col, serotypes, year;
+```
+
 
 ### Retrieving the data fast
 ***
