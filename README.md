@@ -1,3 +1,5 @@
+# USGS-BISON-Map biomapr
+Javascript API to generate a variety of mapping products for USGS BISON data sources.
 <!DOCTYPE html>
 <meta charset="utf-8">
 <title>Testing</title>
