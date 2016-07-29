@@ -70,6 +70,10 @@ Now we can extract records from this layer for a particular species and year, an
 
 Here is what the aggregate looks like for the BBL data:
 
+![alt text](https://github.com/mryassain/USGS-BISON-biomapr/blob/master/images/01_country_boundary.png)
+![alt text](https://github.com/mryassain/USGS-BISON-biomapr/blob/master/images/02_country_boundary.png)
+![alt text](https://github.com/mryassain/USGS-BISON-biomapr/blob/master/images/03_country_boundary.png)
+![alt text](https://github.com/mryassain/USGS-BISON-biomapr/blob/master/images/04_country_boundary.png)
 
 
 ### Retrieving the data fast
