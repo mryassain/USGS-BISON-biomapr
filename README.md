@@ -7,6 +7,7 @@ Bird banding is a universal and indispensable technique for studying the movemen
 ***
 Generating 10ʹ Block Record Count Aggregates for each Species and Year for BBL Dataset in BISON.Our proposal for a process to generate an aggregate record count layer by 10’ block for each species and year in the BBL dataset.
 Since we didn’t have the BBL dataset handy, we used a PostgreSQL database 
+
 1. First determine the bounding box for the grid area.
 
 `select st_extent(geom) from adm0;`
