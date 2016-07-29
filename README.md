@@ -29,7 +29,7 @@ $file = fopen("http://bison.usgs.ornl.gov/solrstaging/occurrences/select/?q=reso
 $line = fgets($file, 1024);
 ```
 
-Third, we loop through the '$file' and insert the data into our database.
+Third, we loop through the file, and we insert the data into our Postgres database.
 
 ```php
 $line = fgets($file, 1024);
