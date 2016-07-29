@@ -71,10 +71,16 @@ Now we can extract records from this layer for a particular species and year, an
 Here is what the aggregate looks like for the BBL data:
 
 ![alt text](https://github.com/mryassain/USGS-BISON-biomapr/blob/master/images/01_country_boundary.png)
-![alt text](https://github.com/mryassain/USGS-BISON-biomapr/blob/master/images/02_superimposed%20grid.png)
-![alt text](https://github.com/mryassain/USGS-BISON-biomapr/blob/master/images/03_aggregate_grid.png)
-![alt text](https://github.com/mryassain/USGS-BISON-biomapr/blob/master/images/04_aggregate_without_grid.png)
+Detail of boundary layer.
 
+![alt text](https://github.com/mryassain/USGS-BISON-biomapr/blob/master/images/02_superimposed%20grid.png)
+Detail of 10’ grid block overlay.
+
+![alt text](https://github.com/mryassain/USGS-BISON-biomapr/blob/master/images/03_aggregate_grid.png)
+Aggregate layer added.
+
+![alt text](https://github.com/mryassain/USGS-BISON-biomapr/blob/master/images/04_aggregate_without_grid.png)
+Aggregate layer with grid layer removed.
 
 ### Retrieving the data fast
 ***
