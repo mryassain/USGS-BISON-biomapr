@@ -131,11 +131,12 @@ In order to install `Biomapr.js` library you need to include this simple line in
 
 To build your BBL-State-Map, you need first to create div-tag then call `biomapr()` function, and passing arguments:`div ID`, dataset name `bbl`, and state code `FL`.  
 
-```javascript
+```html
 	<div id="map1" style="width:700px;height:700px;"></div>
 	<script>
 		biomapr.blockmap("map1","bbl","FL","cn");
-	</script>```
+	</script>
+```
 	
 This returns: 
 
