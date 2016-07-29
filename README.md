@@ -13,7 +13,7 @@ Biodiversity Information Serving Our Nation [BISON](http://bison.usgs.ornl.gov/)
 # BBL Dataset
 Bird banding is a universal and indispensable technique for studying the movement, survival and behavior of birds. The North American Bird Banding Program is jointly administered by the United States Geological Survey and the Canadian Wildlife Service. Their respective banding offices have similar functions and policies and use the same bands, reporting forms and data formats. Joint coordination of the program dates back to 1923.
 
-# Retrieving the data fast from [BISON](http://bison.usgs.ornl.gov/) with PHP
+# Retrieving the data fast from BISON with PHP
 First, we get the number of records.
 
 ```php
