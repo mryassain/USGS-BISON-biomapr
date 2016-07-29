@@ -135,8 +135,19 @@ To build your BBL-State-Map, you need first to create div-tag then call `biomapr
 	<div id="map1" style="width:700px;height:700px;"></div>
 	<script>
 		biomapr.blockmap("map1","bbl","FL","cn");
-	</script>
-```
+	</script>```
+	
 This returns: 
 
 ![alt text](https://github.com/mryassain/USGS-BISON-biomapr/blob/master/images/florida.png)
+
+Visualization mantra and details on demand.
+
+![alt text](https://github.com/mryassain/USGS-BISON-biomapr/blob/master/images/florida_info.png)
+
+We can also generate a BBL-State-Map with species common name or scientific name like :
+
+```javascript
+	biomapr.blockmap('your_div_id','bbl','CA','c',your_species_common_name);
+```
+
