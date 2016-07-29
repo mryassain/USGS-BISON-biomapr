@@ -13,7 +13,6 @@
 		select.selectAll("option").remove();
 		d3.json(server_url + "getSpeciesBaseState_v2.php?state_code=" + state_item.name + ((!spe_type) ? "" : ("&spe_type=" + spe_type)), function(error, species_json) {
 			if (error) {console.log(error); return;}
-			//console.log(server_url + "getSpeciesBaseState_v2.php?state_code=" + state_item.name + ((!spe_type) ? "" : ("&spe_type=" + spe_type)));
 			select.selectAll("option")
 					.data(species_json)
 				.enter().append("option").attr({value:function(d) {return d.sci_name;}}).text(function(d) {return d.sci_name;});
@@ -104,7 +103,6 @@
 				lonabs = Math.abs(lon),
 				londeg = Math.floor(lonabs),
 				lonmin = Math.floor((lonabs - londeg) * 6.0);						
-		//return latdeg + "." + latmin + "-" + ("000"+ String(londeg)).slice(-3) + "." + lonmin;
 		return latdeg + "." + latmin + "-" + threeDigit(londeg)+ "." + lonmin;
 	} // end generate_block_id
 	
@@ -158,7 +156,6 @@
 			states = topojson.feature(map_json, map_json.objects.state).features,
 			counties = topojson.feature(map_json, map_json.objects.county).features;
 			draw_state(state_item.code);
-			//console.log(server_url + "get_Data_v2.php?state_code=" + state_item.name + ((bool_rich) ? "" : ("&sci_name=" + species_sci_name))+ ((!spe_type) ? "" : ("&spe_type=" + spe_type)));
 		});
 
 		function draw_state(fips) {
@@ -184,8 +181,6 @@
 			map_svg.append("path").datum(state).attr({"class": "state-line", "d": path, "fill": "none", "stroke": "#BFC0BF"});
 		}	// end of function draw_state
 		
-		
-		// [{lat10: 24.583333333333,lon10: -82.916666666667,sci_name: "Zenaida macroura",year: 1965,n: 2,state_code: "Florida"},…]
 		var block;
 		var colors = d3.scale.threshold().range(purples);
 		var mySetExtent;
@@ -203,8 +198,6 @@
 					};
 				})
 				.entries(data_json);
-				//console.log(data_json);
-				//console.log(bool_rich);
 			if (bool_rich) {
 				block.forEach(function(d) {
 					d.species_list = d.values.sort(function(a,b){return b.values.n-a.values.n;}).map(function(v){return v.key+"("+formatNumber(v.values.n)+")";}).slice(0,50).join(", ");
@@ -374,7 +367,6 @@
 					} else {
 						extent[1] = --extent[1];
 					}
-					// modified by Yassine on 5/1/2015 for the case of US Virgin Island it was 1-O in the first element of the legand
 					if(extent[0] > extent[1]){
 						var tmp = extent[0];
 							extent[0] = extent[1];
