@@ -1,5 +1,15 @@
 # USGS-BISON-Map Biomapr
 Javascript API to generate a variety of mapping products for USGS BISON data sources.
+# BISON
+Biodiversity Information Serving Our Nation [BISON](http://bison.usgs.ornl.gov/) is committed to providing free and open access to species occurrence data. Data currently available through BISON are provided through the Global Biodiversity Information Facility (GBIF).
+
+[BISON](http://bison.usgs.ornl.gov/) supports several data interchange formats to enable developers to write custom applications. The BISON and Solr search APIs support JavaScript Object Notation (JSON) and JSON with Padding (JSONP). The Web Mapping Services support Portable Network Graphics (PNG) . The web services APIs (OpenSearch & WMS) do not provide the ability to disambiguate species as does the BISON web based UI. When homonyms (names that map to multiple TSNs) exist for either a common name or scientific name OpenSearch or WMS search, a combined query is performed (e.g. Ficus maps to TSNs 73159 and 19081). The resulting combined web service query will return results that include either TSN. Example applications have been written using OpenLayers, and HTML 5 and we are working on mobile applications that will be available shortly.
+
+BISON has a Solr interface supporting Apache Solr 4.4 which can be accessed at this location.To retrieve the first ten occurrence records from Solr you would need to type this query like:
+
+`http://bisonapi.usgs.ornl.gov/solr/occurrences/select/?q=*:* `
+
+
 # BBL Dataset
 Bird banding is a universal and indispensable technique for studying the movement, survival and behavior of birds. The North American Bird Banding Program is jointly administered by the United States Geological Survey and the Canadian Wildlife Service. Their respective banding offices have similar functions and policies and use the same bands, reporting forms and data formats. Joint coordination of the program dates back to 1923.
 # Building a grid based on aggregating data
