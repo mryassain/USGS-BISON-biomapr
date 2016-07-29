@@ -14,7 +14,7 @@ Biodiversity Information Serving Our Nation [BISON](http://bison.usgs.ornl.gov/)
 Bird banding is a universal and indispensable technique for studying the movement, survival and behavior of birds. The North American Bird Banding Program is jointly administered by the United States Geological Survey and the Canadian Wildlife Service. Their respective banding offices have similar functions and policies and use the same bands, reporting forms and data formats. Joint coordination of the program dates back to 1923.
 
 # Retrieving the data fast from BISON with PHP
-First, we get the number of records.
+First, we get the number of records like:
 
 ```php
 $url="http://bisonapi.usgs.ornl.gov/solr/occurrences/select/?q=resourceID:440,100033&start=0&rows=0&wt=json";
@@ -22,7 +22,7 @@ $str = file_get_contents($url);
 $json = json_decode($str, true); // decode the JSON into an associative array
 $rows = $json['response']['numFound'];
 ```
-Second, we search for the records using BISON Solr index. 
+Second, we search for the records using BISON Solr index like:
 
 ```php
 $file = fopen("http://bison.usgs.ornl.gov/solrstaging/occurrences/select/?q=resourceID:440,100033&start=0&rows=17539&wt=csv&fl=occurrenceID,providedScientificName,providedCommonName,year,stateProvince,countryCode,decimalLatitude,decimalLongitude,eventDate", "r");
