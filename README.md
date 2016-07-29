@@ -10,7 +10,9 @@ Since we didn’t have the BBL dataset handy, we used a PostgreSQL database
 1. First determine the bounding box for the grid area.
 
 `select st_extent(geom) from adm0;`
+
 This returns:
+
 box(73.557702 15.7800000000001,134.773925 53.560861)
 
 2.Create a fishnet grid layer. We used one of the recipes from the web for generating a fishnet. 
