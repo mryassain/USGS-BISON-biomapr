@@ -6,15 +6,13 @@ Bird banding is a universal and indispensable technique for studying the movemen
 Generating 10ʹ Block Record Count Aggregates for each Species and Year for BBL Dataset in BISON.Our proposal for a process to generate an aggregate record count layer by 10’ block for each species and year in the BBL dataset.
 Since we didn’t have the BBL dataset handy, we used a PostgreSQL database 
 
-1. First determine the bounding box for the grid area.
-
+* First determine the bounding box for the grid area.
 `select st_extent(geom) from adm0;`
 
 This returns:
 
 `box(73.557702 15.7800000000001,134.773925 53.560861)`
-
-2. Create a fishnet grid layer. We used one of the recipes from the web for generating a fishnet. 
+* Create a fishnet grid layer. We used one of the recipes from the web for generating a fishnet. 
 
 ```sql
 -- Function: public.st_createfishnet(integer, integer, double precision, double precision, double precision, double precision)
@@ -55,7 +53,7 @@ create index c10gidx on grid10 using gist(geom);
 ```
 Now the grid10 layer has three columns: row, col, geom.
 
-3. Create a new layer with the count aggregates, grouping by species (using serotypes here with BBL data) and year (using observation_dt here):
+* Create a new layer with the count aggregates, grouping by species (using serotypes here with BBL data) and year (using observation_dt here):
 
 ```sql
 create table bbl10agg as select
