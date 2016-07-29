@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<body style="">
+
+<table align="center">
+<tr> <td><div id="map1" style="width:300px;height:300px;"></div></td>
+     <td><div id="map2" style="width:300px;height:300px;"></div></td>
+	 <td><div id="map3" style="width:300px;height:300px;"></div></td>
+	 <td><div id="map16" style="width:300px;height:300px;"></div></td>
+     <td><div id="map17" style="width:300px;height:300px;"></div></td>
+	 <td><div id="map18" style="width:300px;height:300px;"></div></td>
+</tr>
+<tr>
+	 <td><div id="map4" style="width:300px;height:300px;"></div></td>
+     <td><div id="map5" style="width:300px;height:300px;"></div></td>
+	 <td><div id="map6" style="width:300px;height:300px;"></div></td>
+	 <td><div id="map19" style="width:300px;height:300px;"></div></td>
+     <td><div id="map20" style="width:300px;height:300px;"></div></td>
+	 <td><div id="map21" style="width:300px;height:300px;"></div></td>
+</tr>
+<tr><td><div id="map7" style="width:300px;height:300px;"></div></td>
+    <td><div id="map8" style="width:300px;height:300px;"></div></td>
+	<td><div id="map9" style="width:300px;height:300px;"></div></td>
+	<td><div id="map22" style="width:300px;height:300px;"></div></td>
+     <td><div id="map23" style="width:300px;height:300px;"></div></td>
+	 <td><div id="map24" style="width:300px;height:300px;"></div></td>
+</tr>
+<tr><td><div id="map10" style="width:300px;height:300px;"></div></td>
+    <td><div id="map11" style="width:300px;height:300px;"></div></td>
+	<td><div id="map12" style="width:300px;height:300px;"></div></td>
+	<td><div id="map25" style="width:300px;height:300px;"></div></td>
+     <td><div id="map26" style="width:300px;height:300px;"></div></td>
+	 <td><div id="map27" style="width:300px;height:300px;"></div></td></tr>
+<tr><td><div id="map13" style="width:300px;height:300px;"></div></td>
+    <td><div id="map14" style="width:300px;height:300px;"></div></td>
+	<td><div id="map15" style="width:300px;height:300px;"></div></td>
+	 <td><div id="map28" style="width:300px;height:300px;"></div></td>
+     <td><div id="map29" style="width:300px;height:300px;"></div></td>
+	 <td><div id="map30" style="width:300px;height:300px;"></div></td></tr>
+</table>
+<script src="http://ec2-50-17-240-81.compute-1.amazonaws.com/d3.min.js"></script>
+<script src="http://ec2-50-17-240-81.compute-1.amazonaws.com/queue.min.js"></script>
+<script src="http://ec2-50-17-240-81.compute-1.amazonaws.com/topojson.js"></script>
+<script src="http://ec2-50-17-240-81.compute-1.amazonaws.com/biomapr.js"></script>
+
+<script>
+//biomapr.fill_state_species_select("select", "Al");
+biomapr.blockmap("map1","bison_datasource_id","VI");
+biomapr.blockmap("map4","bison_datasource_id","FL");
+biomapr.blockmap("map3","bison_datasource_id","ca");
+biomapr.blockmap("map2","bison_datasource_id","tx");
+biomapr.blockmap("map5","bison_datasource_id","ab");
+biomapr.blockmap("map6","bison_datasource_id","OR");
+biomapr.blockmap("map7","bison_datasource_id","01");
+biomapr.blockmap("map8","bison_datasource_id","va");
+biomapr.blockmap("map9","bison_datasource_id","md");
+biomapr.blockmap("map10","bison_datasource_id","oh");
+biomapr.blockmap("map11","bison_datasource_id","NY");
+biomapr.blockmap("map12","bison_datasource_id","72");
+biomapr.blockmap("map13","bison_datasource_id","michigan");
+biomapr.blockmap("map14","bison_datasource_id","arkansas");
+biomapr.blockmap("map15","bison_datasource_id","IL");
+biomapr.blockmap("map16","bison_datasource_id","VI");
+biomapr.blockmap("map17","bison_datasource_id","FL");
+biomapr.blockmap("map18","bison_datasource_id","ca");
+biomapr.blockmap("map19","bison_datasource_id","tx");
+biomapr.blockmap("map20","bison_datasource_id","ab");
+biomapr.blockmap("map21","bison_datasource_id","OR");
+biomapr.blockmap("map22","bison_datasource_id","01");
+biomapr.blockmap("map23","bison_datasource_id","va");
+biomapr.blockmap("map24","bison_datasource_id","md");
+biomapr.blockmap("map25","bison_datasource_id","oh");
+biomapr.blockmap("map26","bison_datasource_id","NY");
+biomapr.blockmap("map27","bison_datasource_id","72");
+biomapr.blockmap("map28","bison_datasource_id","michigan");
+biomapr.blockmap("map29","bison_datasource_id","arkansas");
+biomapr.blockmap("map30","bison_datasource_id","IL");
+</script>
+</body>
