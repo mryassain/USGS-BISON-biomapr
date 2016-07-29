@@ -123,12 +123,15 @@ Aggregate layer added.
 ![alt text](https://github.com/mryassain/USGS-BISON-biomapr/blob/master/images/04_aggregate_without_grid.png)
 Aggregate layer with grid layer removed.
 
-### Visualization mantra: Overview, filter & zoom, details on demand
-***
+# installing Biomapr
 
-### Building a tool instead of an app
-***
+`<script src="http://ec2-54-92-164-197.compute-1.amazonaws.com/biomapr_v1.js"></script>`
 
-### Use Cross-Origin Resource Sharing W3C Recommendation
-***
+#Example Usage
 
+In order to build your BBL state map, you need to create div tag first then call `biomapr()` function passing arguments:`div ID`, dataset:`bbl`, and state:`FL`.  
+
+```javascript
+<div id="map1" style="width:700px;height:700px;"></div>
+<script>biomapr.blockmap("map1","bbl","FL","cn");</script>
+```
