@@ -124,14 +124,19 @@ Aggregate layer added.
 Aggregate layer with grid layer removed.
 
 # installing Biomapr
-
+In order to install `Biomapr.js` library you need to include this simple line into your header javascript file.
 `<script src="http://ec2-54-92-164-197.compute-1.amazonaws.com/biomapr_v1.js"></script>`
 
 #Example Usage
 
-In order to build your BBL state map, you need to create div tag first then call `biomapr()` function passing arguments:`div ID`, dataset:`bbl`, and state:`FL`.  
+To build your BBL-State-Map, you need first to create div-tag then call `biomapr()` function, and passing arguments:`div ID`, dataset name `bbl`, and state code `FL`.  
 
 ```javascript
-<div id="map1" style="width:700px;height:700px;"></div>
-<script>biomapr.blockmap("map1","bbl","FL","cn");</script>
+	<div id="map1" style="width:700px;height:700px;"></div>
+	<script>
+		biomapr.blockmap("map1","bbl","FL","cn");
+	</script>
 ```
+This returns: 
+
+![alt text](https://github.com/mryassain/USGS-BISON-biomapr/blob/master/images/florida.png)
