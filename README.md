@@ -5,13 +5,43 @@ Biodiversity Information Serving Our Nation [BISON](http://bison.usgs.ornl.gov/)
 
 [BISON](http://bison.usgs.ornl.gov/) supports several data interchange formats to enable developers to write custom applications. The BISON and Solr search APIs support JavaScript Object Notation (JSON) and JSON with Padding (JSONP). The Web Mapping Services support Portable Network Graphics (PNG) . The web services APIs (OpenSearch & WMS) do not provide the ability to disambiguate species as does the BISON web based UI. When homonyms (names that map to multiple TSNs) exist for either a common name or scientific name OpenSearch or WMS search, a combined query is performed (e.g. Ficus maps to TSNs 73159 and 19081). The resulting combined web service query will return results that include either TSN. Example applications have been written using OpenLayers, and HTML 5 and we are working on mobile applications that will be available shortly.
 
-BISON has a Solr interface supporting Apache Solr 4.4 which can be accessed at this location.To retrieve the first ten occurrence records from Solr you would need to type this query like:
+[BISON](http://bison.usgs.ornl.gov/) has a Solr interface supporting Apache Solr 4.4 which can be accessed at this location.To retrieve the first ten occurrence records from Solr you would need to type this query like:
 
 `http://bisonapi.usgs.ornl.gov/solr/occurrences/select/?q=*:* `
 
 
 # BBL Dataset
 Bird banding is a universal and indispensable technique for studying the movement, survival and behavior of birds. The North American Bird Banding Program is jointly administered by the United States Geological Survey and the Canadian Wildlife Service. Their respective banding offices have similar functions and policies and use the same bands, reporting forms and data formats. Joint coordination of the program dates back to 1923.
+
+# Retrieving the data fast from [BISON](http://bison.usgs.ornl.gov/) with PHP
+First, we get the number of records.
+
+```php
+$url="http://bisonapi.usgs.ornl.gov/solr/occurrences/select/?q=resourceID:440,100033&start=0&rows=0&wt=json";
+$str = file_get_contents($url);
+$json = json_decode($str, true); // decode the JSON into an associative array
+$rows = $json['response']['numFound'];
+```
+Second, we search for the records using BISON Solr index. 
+
+```php
+$file = fopen("http://bison.usgs.ornl.gov/solrstaging/occurrences/select/?q=resourceID:440,100033&start=0&rows=17539&wt=csv&fl=occurrenceID,providedScientificName,providedCommonName,year,stateProvince,countryCode,decimalLatitude,decimalLongitude,eventDate", "r");
+$line = fgets($file, 1024);
+```
+
+Third, we loop through the '$file' and insert the data into our database.
+
+```php
+$line = fgets($file, 1024);
+while (!feof($file)) {
+  $line = fgets($file, 1024);
+	$exploded_line = explode(',',$line);
+	$sql = "insert into bbl_data (id,sci_name,common_name,lat,lon,eventdate,year,state_code,country_code) values ($1,$2,$3,$7,$8,$9,$4,$5,$6)";
+	pg_query_params($db, $sql, $exploded_line);
+	$number++;
+}
+```
+
 # Building a grid based on aggregating data
 Generating 10ʹ Block Record Count Aggregates for each Species and Year for BBL Dataset in BISON.Our proposal for a process to generate an aggregate record count layer by 10’ block for each species and year in the BBL dataset.
 Since we didn’t have the BBL dataset handy, we used a PostgreSQL database 
@@ -92,10 +122,6 @@ Aggregate layer added.
 
 ![alt text](https://github.com/mryassain/USGS-BISON-biomapr/blob/master/images/04_aggregate_without_grid.png)
 Aggregate layer with grid layer removed.
-
-
-### Retrieving the data fast
-***
 
 ### Visualization mantra: Overview, filter & zoom, details on demand
 ***
