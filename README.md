@@ -17,8 +17,11 @@ This returns:
 2. Create a fishnet grid layer. We used one of the recipes from the web for generating a fishnet. 
 
 `-- Function: public.st_createfishnet(integer, integer, double precision, double precision, double precision, double precision)`
+
 `-- DROP FUNCTION public.st_createfishnet(integer, integer, double precision, double precision, double precision, double precision);`
+
 `CREATE OR REPLACE FUNCTION public.st_createfishnet(IN nrow integer, IN ncol integer, IN xsize double precision, IN ysize double precision, IN x0 double precision DEFAULT 0, IN y0 double precision DEFAULT 0, OUT "row" integer, OUT col integer, OUT geom geometry)`
+
  ` RETURNS SETOF record AS`
 `$BODY$`
 `SELECT i + 1 AS row, j + 1 AS col, ST_Translate(cell, j * $3 + $5, i * $4 + $6) AS geom`
