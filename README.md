@@ -68,6 +68,10 @@ from
   grid10 g on st_intersects(o.geom, g.geom)
 group by row, col, serotypes, year;
 ```
+Now we can extract records from this layer for a particular species and year, and have the capability of extracting all years and doing interactive temporal animations and timelines.
+
+Here is what the aggregate looks like for the BBL data:
+
 
 
 ### Retrieving the data fast
