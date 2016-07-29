@@ -151,7 +151,7 @@ We can also generate a BBL-State-Map with species common name or scientific name
 ```javascript
 	biomapr.blockmap('your_div_id','bbl','MD','c','Acadian Flycatcher');
 ```
- And this returns the map of Maryland state with Acadian Flycatcher species.
+ And this returns:
  
 ![alt text](https://github.com/mryassain/USGS-BISON-biomapr/blob/master/images/maryland_flycatcher.png)
  
