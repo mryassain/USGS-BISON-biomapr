@@ -123,7 +123,7 @@ Aggregate layer added.
 Aggregate layer with grid layer removed.
 
 # installing Biomapr
-In order to install `Biomapr.js` library you need to include this simple line into your header javascript file.
+In order to install `Biomapr.js` library you need to include this simple line into your header HTML file.
 
 `<script src="http://ec2-54-92-164-197.compute-1.amazonaws.com/biomapr_v1.js"></script>`
 
